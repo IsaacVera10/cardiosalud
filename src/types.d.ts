@@ -1,5 +1,5 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
-import type { HTMLAttributes, ImageMetadata } from 'astro/types';
+import type { FormHTMLAttributes, HTMLAttributes, ImageMetadata } from 'astro/types';
 
 export interface Post {
   /** A unique ID number that identifies a post. */
@@ -204,12 +204,22 @@ export interface Collapse {
   classes?: Record<string, string>;
 }
 
-export interface Form {
+// export interface Form {
+//   inputs?: Array<Input>;
+//   textarea?: Textarea;
+//   disclaimer?: Disclaimer;
+//   button?: string;
+//   description?: string;
+//   onSubmit?: (event: Event) => void;
+// }
+
+export interface Form extends FormHTMLAttributes<HTMLFormElement> {
   inputs?: Array<Input>;
   textarea?: Textarea;
   disclaimer?: Disclaimer;
   button?: string;
   description?: string;
+  onSubmit?: (event: Event) => void;
 }
 
 // WIDGETS
