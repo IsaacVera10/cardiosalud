@@ -1,0 +1,140 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const medicationSelect = document.getElementById('medication');
+        const medicationDetailField = document.getElementById('medicationDetailField');
+
+        medicationSelect.addEventListener('change', () => {
+          if (medicationSelect.options[medicationSelect.selectedIndex].value === 'si') {
+            medicationDetailField.style.display = 'block';
+          } else {
+            medicationDetailField.style.display = 'none';
+          }
+        });
+      });
+    </script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="max-w-lg mx-auto p-8 bg-white shadow-lg rounded-lg">
+        <h1 class="text-2xl font-bold mb-6 text-gray-800">Formulario de Salud</h1>
+        <form id="health-form" class="space-y-6">
+          <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="pressureCount">
+              ¿Cuántas veces se ha tomado la presión?
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="pressureCount"
+              type="text"
+              name="pressureCount"
+              placeholder="Ej. 5 veces"
+            />
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="oftenCheckPressure">
+              ¿Suele hacerlo a menudo?
+            </label>
+            <select
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="oftenCheckPressure"
+              name="oftenCheckPressure"
+            >
+              <option value="">Seleccione una opción</option>
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="activityDuringCheck">
+              ¿Qué hacía cuando se tomó la tensión?
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="activityDuringCheck"
+              type="text"
+              name="activityDuringCheck"
+              placeholder="Ej. Estaba sentado"
+            />
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="medication">
+              ¿Toma algún medicamento?
+            </label>
+            <select
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="medication"
+              name="medication"
+            >
+              <option value="">Seleccione una opción</option>
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div id="medicationDetailField" style="display: none;">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="medicationDetail">
+              ¿Qué medicamento toma?
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="medicationDetail"
+              type="text"
+              name="medicationDetail"
+              placeholder="Ej. Paracetamol"
+            />
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="pain">
+              ¿Tiene algún dolor?
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="pain"
+              type="text"
+              name="pain"
+              placeholder="Ej. Dolor de cabeza"
+            />
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="smoke">
+              ¿Fuma?
+            </label>
+            <select
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="smoke"
+              name="smoke"
+            >
+              <option value="">Seleccione una opción</option>
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
